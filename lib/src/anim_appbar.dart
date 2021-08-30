@@ -4,8 +4,8 @@ class AnimAppBar extends StatelessWidget {
   final String title;
   final double? heightAppbar;
   final TextStyle? titleStyle;
-  String? imageAsset;
-  String? imageUrl;
+  final String? imageAsset;
+  final String? imageUrl;
   final dynamic child;
 
   AnimAppBar({
