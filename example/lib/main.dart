@@ -1,5 +1,8 @@
+import 'package:example/src/anim_items_horizontal.dart';
 import 'package:flutter/material.dart';
 import 'package:tbib_anim/tbib_anim.dart';
+
+import 'src/anim_appbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -29,31 +32,16 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  int page = 1;
   @override
   Widget build(BuildContext context) {
-    // This method is rerun every time setState is called, for instance as done
-    // by the _incrementCounter method above.
-    //
-    // The Flutter framework has been optimized to make rerunning build methods
-    // fast, so that you can just rebuild anything that needs updating rather
-    // than having to individually change instances of widgets.
     return Scaffold(
-      body: AnimAppBar(
-        title: widget.title,
-        imageUrl:
-            "https://p.kindpng.com/picc/s/393-3933176_flutter-app-development-flutter-developer-hd-png-download.png",
-        child: SliverList(
-            delegate: SliverChildListDelegate([
-          ListView.builder(
-            shrinkWrap: true,
-            physics: NeverScrollableScrollPhysics(),
-            itemCount: 50,
-            itemBuilder: (BuildContext context, int index) {
-              return Text("Text Here");
-            },
-          ),
-        ])),
-      ),
-    );
+        appBar: page == 0
+            ? null
+            : AppBar(
+                title: Text("some animation"),
+              ),
+        body:
+            page == 0 ? animAppbar(widget.title) : myAnimListViewHorizontal());
   }
 }
