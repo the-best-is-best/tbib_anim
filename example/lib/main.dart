@@ -1,8 +1,6 @@
-import 'package:example/src/anim_items_horizontal.dart';
+import 'package:example/src/anim_appbar.dart';
+import 'package:example/src/anim_product.dart';
 import 'package:flutter/material.dart';
-import 'package:tbib_anim/tbib_anim.dart';
-
-import 'src/anim_appbar.dart';
 
 void main() {
   runApp(MyApp());
@@ -36,12 +34,12 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: page == 0
-            ? null
-            : AppBar(
-                title: Text("some animation"),
-              ),
-        body:
-            page == 0 ? animAppbar(widget.title) : myAnimListViewHorizontal());
+      appBar: page == 0
+          ? null
+          : AppBar(
+              title: Text("some animation"),
+            ),
+      body: page == 0 ? animAppbar(widget.title) : myAnimProduct(),
+    );
   }
 }

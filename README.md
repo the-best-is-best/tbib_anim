@@ -2,7 +2,132 @@
 
 This Package for animated some widgets.
 
-# anim_app_bar
+## download library from github and see code in exmaple
+  if int page = 0 
+
+  you will see AnimAppBar
+
+  if int page = 1
+  you will see anim_cat_&_product
+
+## anim_cat_&_product
+
+# usage
+
+```dart
+
+// class category
+   class DummyCategoeryProduct{
+       static List<Map<String, String>> dummyData = [
+        {"title": "Most\nFavorites", "itemCount": "10 items"},
+        {"title": "Newest", "itemCount": "20 item"},
+        {"title": "Super\nSaving", "itemCount": "5 item"},
+       ];
+   }
+// class pproduct
+   class DummyProduct {
+       static List<dynamic> dummyData = [
+        {
+        "name": "Burger",
+        "brand": "Hawkers",
+        "price": 2.99,
+        "image":
+            "https://raw.githubusercontent.com/the-best-is-best/tbib_anim/master/example/assets/images/burger.png"
+        },
+        {
+        "name": "Cheese Dip",
+        "brand": "Hawkers",
+        "price": 4.99,
+        "image":
+            "https://raw.githubusercontent.com/the-best-is-best/tbib_anim/master/example/assets/images/cheese_dip.png"
+        },
+        {
+        "name": "Cola",
+        "brand": "Mcdonald",
+        "price": 1.49,
+        "image":
+            "https://raw.githubusercontent.com/the-best-is-best/tbib_anim/master/example/assets/images/cola.png"
+        },
+        {
+        "name": "Fries",
+        "brand": "Mcdonald",
+        "price": 2.99,
+        "image":
+            "https://raw.githubusercontent.com/the-best-is-best/tbib_anim/master/example/assets/images/fries.png"
+        },
+        {
+        "name": "Ice Cream",
+        "brand": "Ben & Jerry's",
+        "price": 9.49,
+        "image":
+            "https://raw.githubusercontent.com/the-best-is-best/tbib_anim/master/example/assets/images/ice_cream.png"
+        },
+        {
+        "name": "Noodles",
+        "brand": "Hawkers",
+        "price": 4.49,
+        "image":
+            "https://raw.githubusercontent.com/the-best-is-best/tbib_anim/master/example/assets/images/noodles.png"
+        },
+        {
+        "name": "Pizza",
+        "brand": "Dominos",
+        "price": 17.99,
+        "image":
+            "https://raw.githubusercontent.com/the-best-is-best/tbib_anim/master/example/assets/images/pizza.png"
+        },
+        {
+        "name": "Sandwich",
+        "brand": "Hawkers",
+        "price": 2.99,
+        "image":
+            "https://raw.githubusercontent.com/the-best-is-best/tbib_anim/master/example/assets/images/sandwich.png"
+        },
+        {
+        "name": "Wrap",
+        "brand": "Subway",
+        "price": 6.99,
+        "image":
+            "https://raw.githubusercontent.com/the-best-is-best/tbib_anim/master/example/assets/images/wrap.png"
+        }
+    ]; 
+   }
+
+   // Alert package read image from image map key  
+
+   // widgets
+  AnimProduct(
+          heightCatContainer: MediaQuery.of(context).size.height * 0.3,
+          itemCatData: DummyCategoeryProduct.dummyData,
+          headersCatName: ["title", "itemCount"],
+          textStyleCat: [
+            TextStyle(
+                //title style
+                fontSize: 25, color: Colors.white, fontWeight: FontWeight.bold),
+                // itemCount style
+            TextStyle(fontSize: 16, color: Colors.white),
+          ],
+          itemData: DummyProduct.dummyData,
+          itemHeaderData: ["name", "brand", "price"],
+          textStyleHeaderData: [
+              // namee style
+            TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
+            // brand style
+            TextStyle(fontSize: 17, color: Colors.grey),
+            // price style
+            TextStyle(
+                fontSize: 25, color: Colors.black, fontWeight: FontWeight.bold),
+          ],
+          duration: Duration(milliseconds: 500),
+
+
+          //  isNotProduct if not product data and not display image
+        ),
+
+```
+
+
+## anim_app_bar 0.0.1
 
 # default value for some vairable
 
@@ -11,7 +136,7 @@ This Package for animated some widgets.
   heightAppbar  | MediaQuery.of(context).size.height * 1 / 3
 
 
-## usage like this with image network
+# usage like this with image network
 
 ``` dart
 Scaffold(
@@ -36,7 +161,7 @@ Scaffold(
 
 
 
-## usage like this with image asset
+# usage like this with image asset
 
 ``` dart
 Scaffold(
