@@ -4,18 +4,20 @@ class AnimAppBar extends StatelessWidget {
   final String title;
   final double? heightAppbar;
   final TextStyle? titleStyle;
-  final String? imageAsset;
-  final String? imageUrl;
+  final Widget? background;
   final dynamic child;
+  final bool pinned;
+  final Color? backgroundColor;
 
   AnimAppBar({
     Key? key,
-    this.imageAsset,
-    this.imageUrl,
+    this.background,
     required this.child,
     required this.title,
     this.titleStyle,
     this.heightAppbar,
+    this.pinned = true,
+    this.backgroundColor = Colors.blueAccent,
   });
 
   @override
@@ -28,16 +30,15 @@ class AnimAppBar extends StatelessWidget {
               title,
               style: titleStyle,
             ),
-            background: imageAsset != null
-                ? Image.asset(imageAsset!)
-                : Image.network(imageUrl!),
+            background: background,
           ),
-          pinned: true,
+          pinned: pinned,
           expandedHeight: heightAppbar != null
               ? heightAppbar
-              : MediaQuery.of(context).size.height * 1 / 3,
+              : MediaQuery.of(context).size.height * .3,
+          backgroundColor: backgroundColor,
         ),
-        child
+        SliverList(delegate: SliverChildListDelegate([child]))
       ],
     );
   }

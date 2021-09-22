@@ -4,8 +4,8 @@ import 'package:tbib_anim/tbib_anim.dart';
 Widget animAppbar(String title) {
   return AnimAppBar(
     title: title,
-    imageUrl:
-        "https://p.kindpng.com/picc/s/393-3933176_flutter-app-development-flutter-developer-hd-png-download.png",
+    background: Image.network(
+        "https://p.kindpng.com/picc/s/393-3933176_flutter-app-development-flutter-developer-hd-png-download.png"),
     child: SliverList(
         delegate: SliverChildListDelegate([
       ListView.builder(
